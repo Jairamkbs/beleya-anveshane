@@ -2,7 +2,7 @@
 import os
 
 # Create /home/sample_data
-os.makedirs("/home/bomma/Lihaan", exist_ok=True)
+os.makedirs("/temp/bomma/Lihaan", exist_ok=True)
 
 print("Folder created:", os.path.exists("/home/bomma/Lihaan"))
 
@@ -26,7 +26,7 @@ BUCKET = os.environ["R2_BUCKET"]
 
 # Object paths
 remote_key = "Desktop/Projects.zip"
-local_path = "/home/bomma/Lihaan/Projects.zip"
+local_path = "/temp/bomma/Lihaan/Projects.zip"
 
 # Create S3 client (Cloudflare R2)
 s3 = boto3.client(
@@ -76,10 +76,10 @@ import zipfile
 import os
 
 # Zip file path
-zip_path = "/home/bomma/Lihaan/Projects.zip"
+zip_path = "/temp/bomma/Lihaan/Projects.zip"
 
 # Folder where zip exists
-extract_dir = "/home/bomma/Lihaan"
+extract_dir = "/temp/bomma/Lihaan"
 
 try:
     # Open and extract the zip file
@@ -114,7 +114,7 @@ BUCKET = os.environ["R2_BUCKET"]
 
 # Object paths
 remote_key = "Desktop/Database/Day wise price.db"
-local_path = "/home/bomma/Lihaan/Projects/Day wise price Analysis/Day wise price.db"
+local_path = "/temp/bomma/Lihaan/Projects/Day wise price Analysis/Day wise price.db"
 
 # Create S3 client (Cloudflare R2)
 s3 = boto3.client(
@@ -167,7 +167,7 @@ import subprocess
 import os
 
 # Path to the script
-script_path = "/home/bomma/Lihaan/Projects/codes/all.py"
+script_path = "/temp/bomma/Lihaan/Projects/codes/all.py"
 
 # Get the folder of the script
 script_dir = os.path.dirname(script_path)
@@ -190,7 +190,7 @@ import zipfile
 import os
 
 # File path
-log_file = "/home/bomma/Lihaan/Projects/codes/all.log"
+log_file = "/temp/bomma/Lihaan/Projects/codes/all.log"
 
 # Zip file path (same folder)
 zip_file = log_file.replace(".log", ".zip")
@@ -216,6 +216,7 @@ if os.path.exists(folder_path):
     print("Folder deleted successfully.")
 else:
     print("Folder does not exist.")
+
 
 
 
