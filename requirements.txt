@@ -1,5 +1,3 @@
-google
-googleapiclient
 joblib
 matplotlib
 nbconvert
@@ -9,6 +7,10 @@ pandas
 plotly
 requests
 seaborn
-sklearn
+scikit-learn
 tqdm
 boto3
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
