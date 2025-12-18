@@ -7,34 +7,27 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
+    env:
+      R2_ACCESS_KEY: ${{ secrets.R2_ACCESS_KEY }}
+      R2_SECRET_KEY: ${{ secrets.R2_SECRET_KEY }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
-      # Step 1: Checkout code
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Python 3.12
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      # Step 3: Create safe working folders
-      - name: Prepare writable folders
-        run: |
-          echo "Workspace is: $GITHUB_WORKSPACE"
-          mkdir -p "$GITHUB_WORKSPACE/Lihaan"
-          mkdir -p "$GITHUB_WORKSPACE/output"
-          ls -la "$GITHUB_WORKSPACE"
-
-      # Step 4: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install boto3 requests
 
-      # Step 5: Run Python script with safe base path
       - name: Run Python script
-        env:
-          BASE_DIR: ${{ github.workspace }}
-        run: |
-          python "Beleya anveshane.py"
+        run: python "Beleya anveshane.py"
