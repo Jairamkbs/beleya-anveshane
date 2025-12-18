@@ -1,0 +1,14 @@
+google
+googleapiclient
+joblib
+matplotlib
+nbconvert
+nbformat
+numpy
+pandas
+plotly
+requests
+seaborn
+sklearn
+tqdm
+boto3
