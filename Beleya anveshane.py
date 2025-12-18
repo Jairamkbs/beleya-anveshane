@@ -4,7 +4,7 @@ import os
 # Create /home/sample_data
 os.makedirs("/temp/bomma/Lihaan", exist_ok=True)
 
-print("Folder created:", os.path.exists("/home/bomma/Lihaan"))
+print("Folder created:", os.path.exists("/temp/bomma/Lihaan"))
 
 
 # %%
@@ -216,6 +216,7 @@ if os.path.exists(folder_path):
     print("Folder deleted successfully.")
 else:
     print("Folder does not exist.")
+
 
 
 
