@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5️⃣ Copy your Python file
-COPY "Beleya anveshane.py" app.py
+COPY "Beleya_anveshane.py" app.py
 
 # 6️⃣ Command to run your script
 CMD ["python", "app.py"]
